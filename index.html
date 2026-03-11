@@ -1,85 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Search Apple Style</title>
-
-<style>
-
-body{
-font-family:Arial;
-margin:0;
-}
-
-.navbar{
-height:50px;
-background:#eee;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:20px;
-}
-
-#searchBtn{
-cursor:pointer;
-font-size:20px;
-}
-
-.search-overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:white;
-display:flex;
-justify-content:center;
-align-items:center;
-
-opacity:0;
-visibility:hidden;
-transition:0.3s;
-}
-
-.search-overlay.active{
-opacity:1;
-visibility:visible;
-}
-
-</style>
-
-</head>
-<body>
-
-<div class="navbar">
-
-<div>Menu</div>
-<div id="searchBtn">🔍</div>
-
-</div>
-
-
-<div class="search-overlay" id="searchOverlay">
-
-<div>
-<input type="text" placeholder="Search..." style="font-size:20px">
-<button id="closeSearch">Close</button>
-</div>
-
-</div>
-
-
-<script>
-
-document.getElementById("searchBtn").onclick=function(){
-document.getElementById("searchOverlay").classList.add("active")
-}
-
-document.getElementById("closeSearch").onclick=function(){
-document.getElementById("searchOverlay").classList.remove("active")
-}
-
-</script>
-
-</body>
-</html>
+<section class="product-lineup">
+  <h2>Jelajahi Jajarannya</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="iphone-pro.png" alt="iPhone Pro">
+      <h3>iPhone Pro</h3>
+      <p>Desain inovatif dengan performa tinggi</p>
+      <div class="colors">
+        <span class="color" style="background:#000;"></span>
+        <span class="color" style="background:#fff;"></span>
+        <span class="color" style="background:#ff0;"></span>
+      </div>
+      <a href="#" class="btn">Selengkapnya</a>
+    </div>
+    <div class="product-card">
+      <img src="iphone-standard.png" alt="iPhone Standar">
+      <h3>iPhone Standar</h3>
+      <p>Lebih tipis dan menyenangkan digunakan</p>
+      <div class="colors">
+        <span class="color" style="background:#ccc;"></span>
+        <span class="color" style="background:#f00;"></span>
+      </div>
+      <a href="#" class="btn">Selengkapnya</a>
+    </div>
+    <!-- Tambahkan produk lain sesuai kebutuhan -->
+  </div>
+</section>
