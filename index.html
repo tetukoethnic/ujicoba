@@ -1,48 +1,20 @@
-<!-- ===== Section Lihat Lebih Dekat ===== -->
-<section class="section-look">
-    <h2>Lihat Lebih Dekat</h2>
-    <p>Temukan fitur terbaru dan kehebatan iPhone dalam video ini.</p>
+<section class="section-look-apple">
+  <div class="look-inner">
+    <h2 class="look-title">Lihat Lebih Dekat</h2>
+    <p class="look-subtitle">Temukan semua detail yang membuat iPhone begitu istimewa.</p>
 
-    <!-- Gambar besar + tombol play -->
-    <div class="look-image" id="lookImage">
-        <img src="https://via.placeholder.com/800x450" alt="Video Preview">
-        <div class="play-button">&#9658;</div>
+    <div class="video-preview" id="videoPreview">
+      <img src="https://via.placeholder.com/1200x700" alt="Preview Video">
+      <div class="play-wrap">
+        <div class="play-icon"></div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- ===== Lightbox Video ===== -->
-<div class="video-lightbox" id="videoLightbox">
-    <span class="close-btn" id="closeBtn">&times;</span>
-    <iframe id="videoFrame" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-overlay" id="videoOverlay">
+  <div class="video-container">
+    <span class="close-video" id="closeVideo">&times;</span>
+    <iframe id="iframeVideo" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 </div>
-
-<!-- ===== JavaScript untuk buka/tutup video ===== -->
-<script>
-const lookImage = document.getElementById('lookImage');
-const lightbox = document.getElementById('videoLightbox');
-const closeBtn = document.getElementById('closeBtn');
-const videoFrame = document.getElementById('videoFrame');
-
-// Ganti dengan URL video YouTube/Vimeo milikmu
-const videoURL = "https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1";
-
-// Buka lightbox saat gambar diklik
-lookImage.addEventListener('click', () => {
-    videoFrame.src = videoURL;
-    lightbox.style.display = 'flex';
-});
-
-// Tutup lightbox saat tombol close diklik
-closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-    videoFrame.src = ""; // stop video
-});
-
-// Tutup lightbox jika klik di luar video
-lightbox.addEventListener('click', (e) => {
-    if(e.target === lightbox){
-        lightbox.style.display = 'none';
-        videoFrame.src = "";
-    }
-});
-</script>
