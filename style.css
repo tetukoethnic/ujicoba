@@ -1,77 +1,81 @@
-body{
-margin:0;
-font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+.product-lineup {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
 }
 
-/* NAVBAR */
-
-.navbar{
-position:fixed;
-top:0;
-width:100%;
-height:50px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 40px;
-background:rgba(255,255,255,0.8);
-backdrop-filter:blur(20px);
+.product-lineup h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
 }
 
-.menu{
-display:flex;
-gap:25px;
-list-style:none;
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
-.icons{
-cursor:pointer;
-font-size:18px;
+.product-card {
+  background: #f9f9f9;
+  border-radius: 20px;
+  padding: 20px;
+  width: 220px;
+  transition: transform 0.3s;
 }
 
-
-/* SEARCH OVERLAY */
-
-.search-overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(255,255,255,0.9);
-backdrop-filter:blur(20px);
-display:flex;
-align-items:flex-start;
-justify-content:center;
-
-opacity:0;
-visibility:hidden;
-
-transition:0.4s ease;
+.product-card:hover {
+  transform: translateY(-10px);
 }
 
-.search-overlay.active{
-opacity:1;
-visibility:visible;
+.product-card img {
+  width: 100%;
+  border-radius: 15px;
 }
 
-.search-box{
-margin-top:120px;
-display:flex;
-align-items:center;
-gap:20px;
+.product-card h3 {
+  margin: 15px 0 10px;
+  font-size: 1.2rem;
 }
 
-.search-box input{
-width:600px;
-padding:15px;
-font-size:22px;
-border:none;
-border-bottom:2px solid #ccc;
-outline:none;
+.product-card p {
+  font-size: 0.95rem;
+  color: #555;
 }
 
-.close{
-cursor:pointer;
-font-size:22px;
+.colors {
+  margin: 10px 0;
+}
+
+.color {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 5px;
+  border: 1px solid #ddd;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: #0071e3;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #005bb5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 }
