@@ -30,15 +30,25 @@ body {
   gap: 30px;
 }
 
+/* Card Produk */
 .product-card {
   background: #f9f9f9;
   border-radius: 20px;
   padding: 20px;
   width: 220px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ease, box-shadow 0.3s ease, opacity 0.5s ease;
   cursor: pointer;
 }
 
+/* Animasi saat masuk viewport */
+.product-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Hover efek */
 .product-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.1);
@@ -59,19 +69,6 @@ body {
   color: #555;
 }
 
-.colors {
-  margin: 10px 0;
-}
-
-.color {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  margin-right: 5px;
-  border: 1px solid #ddd;
-}
-
 .btn {
   display: inline-block;
   margin-top: 10px;
@@ -88,6 +85,7 @@ body {
   background: #005bb5;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .product-grid {
     flex-direction: column;
@@ -105,11 +103,6 @@ body {
       <img src="https://via.placeholder.com/220x240?text=iPhone+Pro" alt="iPhone Pro">
       <h3>iPhone Pro</h3>
       <p>Desain inovatif dengan performa tinggi</p>
-      <div class="colors">
-        <span class="color" style="background:#000;"></span>
-        <span class="color" style="background:#fff;"></span>
-        <span class="color" style="background:#ff0;"></span>
-      </div>
       <a href="#" class="btn">Selengkapnya</a>
     </div>
 
@@ -117,10 +110,6 @@ body {
       <img src="https://via.placeholder.com/220x240?text=iPhone+Standar" alt="iPhone Standar">
       <h3>iPhone Standar</h3>
       <p>Lebih tipis dan menyenangkan digunakan</p>
-      <div class="colors">
-        <span class="color" style="background:#ccc;"></span>
-        <span class="color" style="background:#f00;"></span>
-      </div>
       <a href="#" class="btn">Selengkapnya</a>
     </div>
 
@@ -128,15 +117,26 @@ body {
       <img src="https://via.placeholder.com/220x240?text=iPhone+Mini" alt="iPhone Mini">
       <h3>iPhone Mini</h3>
       <p>Kompak dan ringkas, tetap bertenaga</p>
-      <div class="colors">
-        <span class="color" style="background:#0f0;"></span>
-        <span class="color" style="background:#00f;"></span>
-      </div>
       <a href="#" class="btn">Selengkapnya</a>
     </div>
 
   </div>
 </section>
+
+<script>
+// Fade-in saat scroll masuk viewport
+const cards = document.querySelectorAll('.product-card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));
+</script>
 
 </body>
 </html>
