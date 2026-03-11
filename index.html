@@ -46,3 +46,15 @@
 
 </body>
 </html>
+
+const searchBtn = document.getElementById("searchBtn")
+const overlay = document.getElementById("searchOverlay")
+const closeBtn = document.getElementById("closeSearch")
+
+searchBtn.onclick = () =>{
+overlay.classList.add("active")
+}
+
+closeBtn.onclick = () =>{
+overlay.classList.remove("active")
+}
