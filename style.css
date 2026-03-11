@@ -1,95 +1,107 @@
 /* ===== Section Lihat Lebih Dekat ===== */
-.section-look {
+.section-look-apple {
     text-align: center;
     padding: 80px 20px;
+    background: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-.section-look h2 {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
+.look-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d1d1f;
 }
 
-.section-look p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 40px;
+.look-subtitle {
+    font-size: 1.1rem;
+    color: #6e6e73;
+    margin-bottom: 32px;
 }
 
-/* Gambar besar */
-.look-image {
+.video-preview {
     position: relative;
     display: inline-block;
-    cursor: pointer;
-    max-width: 800px;
-    width: 100%;
-    border-radius: 16px;
+    max-width: 100%;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.look-image:hover {
+.video-preview img {
+    width: 100%;
+    display: block;
+}
+
+.video-preview:hover {
     transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
 }
 
-/* Tombol play di tengah gambar */
-.play-button {
+/* Play button design */
+.play-wrap {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255,255,255,0.8);
+    width: 90px;
+    height: 90px;
+    background: rgba(255,255,255,0.85);
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    color: #000;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: 0.3s ease;
 }
 
-.play-button:hover {
+.play-icon {
+    width: 0;
+    height: 0;
+    border-left: 28px solid #000;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+}
+
+.play-wrap:hover {
     background: rgba(255,255,255,1);
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1.12);
 }
 
 /* Lightbox overlay */
-.video-lightbox {
+.video-overlay {
     display: none;
     position: fixed;
     top:0;
     left:0;
-    width:100%;
+    width: 100%;
     height:100%;
     background: rgba(0,0,0,0.85);
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    padding: 20px;
 }
 
-.video-lightbox iframe {
-    width: 100%;
+.video-container {
+    position: relative;
+    width: 90%;
     max-width: 900px;
-    height: 500px;
+    aspect-ratio: 16/9;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
     border: none;
     border-radius: 12px;
 }
 
 /* Close button */
-.close-btn {
+.close-video {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 2rem;
+    top: -20px;
+    right: -20px;
+    font-size: 2.8rem;
     color: #fff;
     cursor: pointer;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.close-btn:hover {
-    color: #ccc;
 }
