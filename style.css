@@ -2,7 +2,7 @@
 html, body {margin:0;padding:0;overflow-x:hidden;}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;color:#1d1d1f;background:#fff;}
 
-/* ================== NAVBAR ================== */
+/* ================== NAVBAR (Desktop) ================== */
 .navbar{
   position:fixed;
   top:0;
@@ -12,7 +12,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;color:#1d1d1
   border-bottom:1px solid #eee;
   z-index:9999;
 }
-
 .nav-container{
   max-width:1200px;
   margin:auto;
@@ -21,15 +20,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;color:#1d1d1
   justify-content:space-between;
   padding:10px 30px;
 }
-
 .logo img{height:55px;}
-
-.menu-toggle{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-}
-
+.menu-toggle{display:none;font-size:28px;cursor:pointer;}
 .nav-menu{
   display:flex;
   gap:35px;
@@ -37,39 +29,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;color:#1d1d1
   margin:0;
   padding:0;
 }
+.nav-menu li{display:flex;align-items:center;position:relative;}
+.nav-menu li > a,.dropdown-parent > span{display:flex;align-items:center;height:35px;cursor:pointer;}
+.nav-menu a{text-decoration:none;color:#1d1d1f;font-size:16px;font-weight:600;}
 
-.nav-menu li{
-  display:flex;
-  align-items:center;
-  position:relative;
-}
-
-.nav-menu li > a,
-.dropdown-parent > span{
-  display:flex;
-  align-items:center;
-  height:35px;
-  cursor:pointer;
-}
-
-.nav-menu a{
-  text-decoration:none;
-  color:#1d1d1f;
-  font-size:16px;
-  font-weight:600;
-}
-
-/* DROPDOWN */
+/* DROPDOWN (Desktop) */
 .dropdown-parent{position:relative;}
 .dropdown-parent > span{font-size:16px;font-weight:600;}
-
 @media(min-width:769px){
-  .dropdown-parent:hover .dropdown{
-    display:flex;
-    flex-direction:column;
-  }
+  .dropdown-parent:hover .dropdown{display:flex;flex-direction:column;}
 }
-
 .dropdown{
   position:absolute;
   top:35px;
@@ -83,7 +52,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;color:#1d1d1
   padding:10px 0;
   z-index:10000;
 }
-
 .dropdown a{
   padding:10px 20px;
   display:block;
@@ -91,10 +59,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;color:#1d1d1
   text-decoration:none;
   transition:0.3s;
 }
-
 .dropdown a:hover{ background:#f1f1f1; }
 
-/* ================== HERO ================== */
+/* ================== HERO (Desktop) ================== */
 .hero{
   min-height:100vh;
   background:url("background.png") center/cover;
@@ -116,10 +83,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;color:#1d1d1
   margin-top:20px;
 }
 
-/* ================== TENTANG ================== */
+/* ================== TENTANG (Desktop) ================== */
 .tentang{padding:120px 15%;text-align:center;line-height:1.8;font-size:18px;}
 
-/* ================== GALERI ================== */
+/* ================== GALERI (Desktop) ================== */
 .galeri{padding:120px 10%;text-align:center;background:#fafafa;}
 .slider{overflow:hidden;margin-top:40px;}
 .slide-track{display:flex;width:max-content;animation:scroll 40s linear infinite;}
@@ -129,7 +96,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;color:#1d1d1
 .btn-galeri{display:inline-block;margin-top:40px;background:#333;color:white;padding:10px 25px;border-radius:25px;text-decoration:none;transition:0.3s;}
 .btn-galeri:hover{background:#0071e3;}
 
-/* ================== PRODUK UNGGULAN ================== */
+/* ================== PRODUK UNGGULAN (Desktop) ================== */
 .produk-unggulan .product-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px;}
 .produk-unggulan .product-card{
   background:#f9f9f9;
@@ -167,7 +134,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;color:#1d1d1
 }
 .produk-unggulan h2, .produk-unggulan p{text-align:center;margin:0 auto 20px auto;max-width:600px;}
 
-/* ================== LIHAT LEBIH DEKAT ================== */
+/* ================== LIHAT LEBIH DEKAT (Desktop) ================== */
 .section-look-apple{
   padding:120px 10%;
   text-align:center;
@@ -225,7 +192,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;color:#1d1d1
 /* ================== FOOTER ================== */
 footer{background:#111;color:#aaa;text-align:center;padding:30px;}
 
-/* ================== SEARCH ================== */
+/* ================== SEARCH & PRELOADER ================== */
 .search-icon{cursor:pointer;font-size:18px;}
 #search-results{margin-top:20px;text-align:left;}
 #search-results a{display:block;padding:10px;text-decoration:none;color:#1d1d1f;}
@@ -236,38 +203,44 @@ footer{background:#111;color:#aaa;text-align:center;padding:30px;}
 .close-search{position:fixed; top:25px; right:25px; width:45px; height:45px; border-radius:50%; background:rgba(255,255,255,0.95); color:#1d1d1f; font-size:28px; font-weight:bold; display:flex; justify-content:center; align-items:center; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.15); transition:0.3s ease; z-index:10100;}
 .close-search:hover{background:rgba(255,255,255,1); transform:scale(1.1);}
 
-/* ================== PRELOADER ================== */
 #loader {position: fixed; inset:0; background:white; display:flex; align-items:center; justify-content:center; z-index:99999; transition: opacity 0.6s ease;}
 .loader-logo {width:520px; animation: luxuryReveal 3s ease-in-out infinite; filter: blur(6px);}
 @keyframes luxuryReveal {0%{opacity:0;transform:scale(0.85);filter:blur(10px);}40%{opacity:1;transform:scale(1);filter:blur(0);}70%{opacity:1;transform:scale(1.03);}100%{opacity:0;transform:scale(1.08);filter:blur(4px);}}
 
-/* ================== MOBILE APPLE STYLE ================== */
+/* ================== MOBILE ONLY ================== */
 @media(max-width:768px){
-  .mobile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
+  /* Apple-style mobile navbar */
+  .nav-container{
+    justify-content:space-between;
+    padding:12px 20px;
   }
-  .mobile-left {display: flex; align-items: center;}
-  .mobile-logo img {height: 45px;}
-  .mobile-right {display: flex; gap: 18px; align-items: center;}
-  .search-icon {font-size: 22px; cursor: pointer;}
-  .menu-toggle {font-size: 26px; cursor: pointer; transition: transform 0.3s ease;}
+  .menu-toggle{display:block;}
+  .nav-menu{
+    display:none;
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:80%;
+    height:100vh;
+    background:#fff;
+    flex-direction:column;
+    gap:25px;
+    padding:80px 25px;
+    box-shadow:-4px 0 18px rgba(0,0,0,0.12);
+    transition:right 0.4s ease;
+    z-index:1000;
+  }
+  .nav-menu.active{right:0;}
+  .nav-menu li a,.dropdown-parent > span{display:block;font-size:18px;font-weight:600;padding:12px 0;}
+  .dropdown{position:relative;top:0;box-shadow:none;min-width:unset;flex-direction:column;padding-left:15px;display:none;}
+  .dropdown-parent.active .dropdown{display:flex;}
+  .dropdown-parent > span::after{content:"▼";float:right;font-size:12px;}
 
-  .nav-menu {display: none; position: fixed; top:0; right:-100%; width:80%; height:100vh; background:#fff; flex-direction:column; gap:25px; padding:80px 25px; box-shadow:-4px 0 18px rgba(0,0,0,0.12); transition:right 0.4s ease; z-index:1000;}
-  .nav-menu.active {right:0;}
-  .nav-menu li a, .dropdown-parent > span {display:block; padding:12px 0; font-size:18px; font-weight:600;}
-
-  .dropdown {position: relative; top:0; box-shadow:none; min-width:unset; flex-direction: column; padding-left:15px; display:none;}
-  .dropdown-parent.active .dropdown {display:flex;}
-  .dropdown-parent > span::after {content:"▼"; float:right; font-size:12px;}
-
-  /* Hero resize */
+  /* Hero */
   .hero h1{font-size:48px;}
   .hero p{font-size:18px;}
 
-  /* Tentang padding */
+  /* Tentang */
   .tentang{padding:80px 10%;}
 
   /* Galeri */
@@ -277,7 +250,7 @@ footer{background:#111;color:#aaa;text-align:center;padding:30px;}
   /* Produk Unggulan */
   .produk-unggulan .product-grid{gap:20px;}
   .produk-unggulan .product-card{width:180px;}
-  
+
   /* Lihat Lebih Dekat */
   .section-look-apple{padding:80px 5%;}
   .section-look-apple .look-title{font-size:2rem;}
